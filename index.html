@@ -1,55 +1,154 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshit Gupta | Home</title>
+  <title>Harshit Gupta | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <style>
     html { scroll-behavior: smooth; }
-    body { 
+    body {
       font-family: 'Inter', sans-serif;
-      background-image: url('https://images.unsplash.com/photo-1705097565168-fb30476501e5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
- }
+      background: #f9fafb;
+    }
+    section {
+      transition: all 0.5s ease-in-out;
+    }
   </style>
 </head>
 <body class="text-gray-900">
+  <!-- Navbar -->
   <nav class="bg-gray-900 text-white px-6 py-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
-    <h1 class="text-2xl font-bold">Portfolio</h1>
+    <h1 class="text-2xl font-bold">Harshit Gupta</h1>
     <ul class="flex flex-wrap justify-end gap-4 text-sm">
-      <li><a class="hover:text-yellow-300" href="index.html">Home</a></li>
-      <li><a class="hover:text-yellow-300" href="education.html">Education</a></li>
-      <li><a class="hover:text-yellow-300" href="skills.html">Skills & Certifications</a></li>
-      
-      <li><a class="hover:text-yellow-300" href="resume.html">My Resume</a></li>
-      <li><a class="hover:text-yellow-300" href="experiences.html">Experiences</a></li>
-      <li><a class="hover:text-yellow-300" href="projects.html">Projects</a></li>
-      <li><a class="hover:text-yellow-300" href="contact.html">Contact Info</a></li>
+      <li><a class="hover:text-yellow-300" href="#home">Home</a></li>
+      <li><a class="hover:text-yellow-300" href="#education">Education</a></li>
+      <li><a class="hover:text-yellow-300" href="#skills">Skills</a></li>
+      <li><a class="hover:text-yellow-300" href="#resume">Resume</a></li>
+      <li><a class="hover:text-yellow-300" href="#experiences">Experiences</a></li>
+      <li><a class="hover:text-yellow-300" href="#projects">Projects</a></li>
+      <li><a class="hover:text-yellow-300" href="#contact">Contact</a></li>
     </ul>
   </nav>
-  <main class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
-    <img src="assets/photo.jpg" alt="Harshit Gupta" class="rounded-full w-40 h-40 border-4 border-white shadow-md mb-6" />
-    <h2 class="text-4xl sm:text-5xl font-bold mb-4">Hi, I'm Harshit Gupta</h2>
-    <p class="text-xl sm:text-2xl text-gray-800 font-medium">Aspiring Data Scientist | Python Programmer | Curious Learner</p>
-   <div class="mt-6 max-w-2xl text-lg text-gray-700">
-    <p>
-      I’m currently pursuing a B.Tech in Computer Science from Babasaheb Bhimrao Ambedkar University (BBAU), Lucknow — a central university. I love exploring real-world problems through code and data.
-    </p>
-  
-    <p class="mt-6 text-xl font-semibold text-gray-800">Why Data Science?</p>
-  
-    <p class="mt-2">
-      My interest in data science started in an unusual way. One day, while watching the movie <strong>Interstellar</strong>, I became fascinated by astronomy. I started reading more about it and discovered that modern astronomy is powered by data science. That connection sparked my curiosity, and ever since, I’ve been diving into the world of data — learning tools, building projects, and growing step by step.
-    </p>
-</div>
 
-  <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+  <!-- Home Section -->
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1705097565168-fb30476501e5?q=80&w=1170');">
+    <img src="assets/photo.jpg" alt="Harshit Gupta" class="rounded-full w-40 h-40 border-4 border-white shadow-md mb-6" />
+    <h2 class="text-5xl font-bold mb-4" id="heading-home">Hi, I'm Harshit Gupta</h2>
+    <p class="text-xl text-gray-200 font-medium">Aspiring Data Scientist | Python Programmer | Curious Learner</p>
+    <p class="mt-6 max-w-2xl text-lg text-gray-100">I’m currently pursuing a B.Tech in Computer Science from BBAU, Lucknow. I love exploring real-world problems through code and data.</p>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="min-h-screen px-6 py-12 text-center bg-white">
+    <h2 class="text-5xl font-extrabold mb-12 text-gray-900 tracking-tight" id="heading-education">🎓 Education</h2>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-lg">
+        <h3 class="text-2xl font-bold">B.Tech in Computer Engineering</h3>
+        <p class="italic">(2024–2028)</p>
+        <p>Babasaheb Bhimrao Ambedkar University, Lucknow</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-lg">
+        <h3 class="text-2xl font-bold">Class 12th – PCM</h3>
+        <p>Avadh Collegiate — 92.2%</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-lg">
+        <h3 class="text-2xl font-bold">Class 10th</h3>
+        <p>Avadh Collegiate — 94.6%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="min-h-screen px-6 py-12 bg-gray-50">
+    <h2 class="text-4xl font-bold text-center mb-8" id="heading-skills">🛠️ Skills</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">Python</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">C/C++</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">Git & GitHub</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">Jupyter Notebook</div>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">VS Code</div>
+    </div>
+    <h3 class="text-3xl font-bold text-center mt-10 mb-4">📜 Certifications</h3>
+    <div class="text-center text-gray-600 italic">No certifications added yet.</div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="min-h-screen px-6 py-12 bg-white text-center">
+    <h2 class="text-4xl font-bold mb-8" id="heading-resume">📄 My Resume</h2>
+    <div class="max-w-xl mx-auto space-y-6">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">📥 Download Resume</h3>
+        <a href="assets/Harshit_Gupta_Resume.pdf" download class="text-blue-600 hover:underline">Download Resume</a>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-4">▶️ Video Resume</h3>
+        <video class="w-full rounded-lg shadow" controls></video>
+        <p class="text-sm text-gray-500 italic">(Video resume coming soon)</p>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">🔗 LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/harshit-gupta-b9553335a/" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/harshit-gupta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences Section -->
+  <section id="experiences" class="min-h-screen px-6 py-12 bg-gray-50 text-center">
+    <h2 class="text-4xl font-bold mb-8" id="heading-experiences">💼 Experiences</h2>
+    <div class="max-w-3xl mx-auto space-y-6">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold">Campus Ambassador – Techniche, IIT Guwahati</h3>
+        <p class="text-sm text-gray-600">May 2025 – Present</p>
+        <p class="mt-2 text-gray-700">Developed communication and leadership skills by coordinating events and representing the brand on campus.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="min-h-screen px-6 py-12 bg-white">
+    <h2 class="text-4xl font-bold text-center mb-8" id="heading-projects">🚀 My Projects</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="assets/data_photo.jpg" alt="Data Science Repo" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-2">📂 Data_Science Repository</h3>
+          <p class="text-gray-700 mb-3">Learning journey through data science — Python, Pandas, NumPy, visualizations, and ML notebooks.</p>
+          <a href="https://github.com/Harshit-80989/Data_Science" target="_blank" class="inline-block px-4 py-2 text-white bg-gray-800 rounded hover:bg-gray-700">🔗 View GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="min-h-screen px-6 py-12 text-center bg-gray-100">
+    <h2 class="text-4xl font-bold mb-8" id="heading-contact">📬 Contact Me</h2>
+    <div class="max-w-xl mx-auto space-y-6">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold">📧 Email</h3>
+        <p>harshitgupta4732@gmail.com</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-semibold">🔗 LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/harshit-gupta-b9553335a/" target="_blank" class="text-blue-700 hover:underline">linkedin.com/in/harshit-gupta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
     © 2025 Harshit Gupta | Built with ❤️ and Tailwind CSS
   </footer>
+
+  <script>
+    ScrollReveal().reveal('#heading-home, #heading-education, #heading-skills, #heading-resume, #heading-experiences, #heading-projects, #heading-contact', {
+      duration: 1000,
+      origin: 'bottom',
+      distance: '50px',
+      reset: false
+    });
+  </script>
 </body>
 </html>
