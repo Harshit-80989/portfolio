@@ -48,18 +48,19 @@
             bottom: 0;
             width: 2px;
             background-color: #374151; /* gray-700 */
-        }
-        /* Timeline dot */
+        } 
         .timeline-dot {
-            position: absolute;
-            left: 4px; /* Centered on the line */
-            top: 4px;
-            width: 16px;
-            height: 16px;
-            background-color: #8b5cf6; /* violet-500 */
-            border-radius: 50%;
-            border: 3px solid #111827; /* gray-900 */
-        }
+    position: absolute;
+    left: -0.65rem; /* Centers bullet on the vertical line */
+    top: 0.4rem;    /* Aligns with text */
+    width: 14px;
+    height: 14px;
+    background-color: #8b5cf6; /* violet */
+    border-radius: 50%;
+    border: 3px solid #111827; /* background color */
+}
+
+
     </style>
 </head>
 
@@ -156,38 +157,50 @@
     </section>
 
     <section id="experience" class="py-24 px-6" style="background-color: #111827;">
-        <div class="max-w-4xl mx-auto scroll-animate">
-            <h2 class="text-4xl font-bold text-center text-white mb-4">Work Experience</h2>
-            <p class="text-center text-violet-500 mb-16 font-medium">Where I've contributed</p>
-            <div class="relative pl-12">
-                <div class="timeline-line"></div>
-                <div class="mb-12 relative">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-bold text-white"> Campus Ambassador at <span class="text-violet-400">Techniche, IIT Guwahati</span></h3>
-                    <p class="text-sm text-gray-400 mb-2">May 2025 – Present</p>
-                    <p class="text-gray-300">Coordinated events and represented the brand, gaining experience in communication and leadership.</p>
-                </div>
-                <div class="mb-12 relative">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-bold text-white"> Campus Ambassador at <span class="text-violet-400">UDGHOSH, IIT Kanpur</span></h3>
-                    <p class="text-sm text-gray-400 mb-2">Jul 2025 – Present</p>
-                    <p class="text-gray-300">Promoted and represented the annual sports festival of IIT Kanpur.</p>
-                </div>
-                <div class="mb-12 relative">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-bold text-white"> Contributor at <span class="text-violet-400">GirlScript Summer of Code 2025</span></h3>
-                    <p class="text-sm text-gray-400 mb-2">Jul 2025 – Present</p>
-                    <p class="text-gray-300">Contributed to real-world open-source projects as part of a 3-month program.</p>
-                </div>
-                <div class="relative">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-bold text-white"> Campus Ambassador at <span class="text-violet-400">Unstop</span></h3>
-                    <p class="text-sm text-gray-400 mb-2">Aug 2025 – Present</p>
-                    <p class="text-gray-300">Acted as a bridge between the platform and students, helping them unlock potential by promoting competitions, internships, and hackathons.</p>
-                </div>
+    <div class="max-w-4xl mx-auto scroll-animate">
+        <h2 class="text-4xl font-bold text-center text-white mb-4">Work Experience</h2>
+        <p class="text-center text-violet-500 mb-16 font-medium">Where I've contributed</p>
+
+        <!-- Timeline container -->
+        <div class="relative pl-8">
+            <!-- Timeline vertical line -->
+            <div class="absolute left-1.5 top-0 bottom-0 w-0.5 bg-gray-700"></div>
+
+            <!-- Experience 1 -->
+            <div class="mb-12 relative">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold text-white">Campus Ambassador at <span class="text-violet-400">Techniche, IIT Guwahati</span></h3>
+                <p class="text-sm text-gray-400 mb-2">May 2025 – Present</p>
+                <p class="text-gray-300">Coordinated events and represented the brand, gaining experience in communication and leadership.</p>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="mb-12 relative">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold text-white">Campus Ambassador at <span class="text-violet-400">UDGHOSH, IIT Kanpur</span></h3>
+                <p class="text-sm text-gray-400 mb-2">Jul 2025 – Present</p>
+                <p class="text-gray-300">Promoted and represented the annual sports festival of IIT Kanpur.</p>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="mb-12 relative">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold text-white">Contributor at <span class="text-violet-400">GirlScript Summer of Code 2025</span></h3>
+                <p class="text-sm text-gray-400 mb-2">Jul 2025 – Present</p>
+                <p class="text-gray-300">Contributed to real-world open-source projects as part of a 3-month program.</p>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="relative">
+                <div class="timeline-dot"></div>
+                <h3 class="text-xl font-bold text-white">Campus Ambassador at <span class="text-violet-400">Unstop</span></h3>
+                <p class="text-sm text-gray-400 mb-2">Aug 2025 – Present</p>
+                <p class="text-gray-300">Acted as a bridge between the platform and students, helping them unlock potential by promoting competitions, internships, and hackathons.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <section id="contact" class="py-24 px-6 bg-gray-900">
         <div class="max-w-xl mx-auto text-center scroll-animate">
