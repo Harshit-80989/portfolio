@@ -41,12 +41,10 @@
             transform: translateY(0);
         }
         
-        /* --- CORRECTED TIMELINE STYLES --- */
-
         /* Timeline line: Positioned within the parent section's left padding */
         .timeline-line {
             position: absolute;
-            left: 1.5rem; /* 24px: Positioned within the pl-8 (2rem/32px) padding of the section */
+            left: 1.5rem; /* 24px: Positioned within the pl-8 (2rem/32px) padding of the container */
             top: 0;
             bottom: 0;
             width: 2px;
@@ -56,12 +54,7 @@
         /* Timeline dot: Pulled left from the text content to sit perfectly on the line */
         .timeline-dot {
             position: absolute;
-            /* Calculation: -1.125rem (-18px)
-               Moves the dot left from the text start (32px) to the line's position (24px) 
-               and centers its 20px total width (14px + 6px border) on the line.
-               (32px - 24px) + (20px / 2) = 8px + 10px = 18px to the left.
-            */
-            left: -1.125rem; 
+            left: -1.125rem; /* -18px, to center on the line */
             top: 0.4rem;   /* Aligns dot vertically with the text */
             width: 14px;
             height: 14px;
@@ -165,44 +158,48 @@
         </div>
     </section>
 
-    <section id="experience" class="relative pl-8 py-12 bg-gray-900 text-white">
-    <div class="timeline-line"></div>
+    <section id="experience" class="py-24 px-6 bg-gray-900">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-white mb-16">Experience</h2>
 
-    <h2 class="text-3xl font-bold mb-10 text-violet-400">Experience</h2>
+            <div class="relative">
+                <div class="timeline-line"></div>
 
-    <div class="mb-12 relative">
-        <div class="timeline-dot"></div>
-        <h3 class="text-xl font-bold">
-            Campus Ambassador at <span class="text-violet-400">Techniche, IIT Guwahati</span>
-        </h3>
-        <p class="text-sm text-gray-400 mb-2">May 2025 – Present</p>
-        <p class="text-gray-300">
-            Coordinated events and represented the brand, enhancing communication and leadership skills.
-        </p>
-    </div>
+                <div class="mb-12 relative pl-12">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-white">
+                        Campus Ambassador at <span class="text-violet-400">Techniche, IIT Guwahati</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-2">May 2025 – Present</p>
+                    <p class="text-gray-300">
+                        Coordinated events and represented the brand, enhancing communication and leadership skills.
+                    </p>
+                </div>
 
-    <div class="mb-12 relative">
-        <div class="timeline-dot"></div>
-        <h3 class="text-xl font-bold">
-            Campus Ambassador at <span class="text-violet-400">Udghosh, IIT Kanpur</span>
-        </h3>
-        <p class="text-sm text-gray-400 mb-2">Jul 2025 – Present</p>
-        <p class="text-gray-300">
-            Promoted and represented the annual sports festival of IIT Kanpur, building event outreach skills.
-        </p>
-    </div>
+                <div class="mb-12 relative pl-12">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-white">
+                        Campus Ambassador at <span class="text-violet-400">Udghosh, IIT Kanpur</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-2">Jul 2025 – Present</p>
+                    <p class="text-gray-300">
+                        Promoted and represented the annual sports festival of IIT Kanpur, building event outreach skills.
+                    </p>
+                </div>
 
-    <div class="mb-12 relative">
-        <div class="timeline-dot"></div>
-        <h3 class="text-xl font-bold">
-            Contributor at <span class="text-violet-400">GirlScript Summer of Code 2024</span>
-        </h3>
-        <p class="text-sm text-gray-400 mb-2">Jul 2024 – Sep 2024</p>
-        <p class="text-gray-300">
-            Contributed to open-source projects, improved coding skills, and collaborated with developers globally.
-        </p>
-    </div>
-</section>
+                <div class="mb-12 relative pl-12">
+                    <div class="timeline-dot"></div>
+                    <h3 class="text-xl font-bold text-white">
+                        Contributor at <span class="text-violet-400">GirlScript Summer of Code 2024</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 mb-2">Jul 2024 – Sep 2024</p>
+                    <p class="text-gray-300">
+                        Contributed to open-source projects, improved coding skills, and collaborated with developers globally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
