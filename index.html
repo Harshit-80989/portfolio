@@ -40,30 +40,35 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Timeline line */
-.timeline-line {
-    position: absolute;
-    left: 10px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #374151; /* gray-700 */
-}
-
-/* Timeline dot */
-.timeline-dot {
-    position: absolute;
-    left: -0.55rem; /* centers bullet on line */
-    top: 0.4rem;    /* aligns with text */
-    width: 14px;
-    height: 14px;
-    background-color: #8b5cf6; /* violet */
-    border-radius: 50%;
-    border: 3px solid #111827; /* background color */
-}
-
-
         
+        /* --- CORRECTED TIMELINE STYLES --- */
+
+        /* Timeline line: Positioned within the parent section's left padding */
+        .timeline-line {
+            position: absolute;
+            left: 1.5rem; /* 24px: Positioned within the pl-8 (2rem/32px) padding of the section */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #374151; /* gray-700 */
+        }
+
+        /* Timeline dot: Pulled left from the text content to sit perfectly on the line */
+        .timeline-dot {
+            position: absolute;
+            /* Calculation: -1.125rem (-18px)
+               Moves the dot left from the text start (32px) to the line's position (24px) 
+               and centers its 20px total width (14px + 6px border) on the line.
+               (32px - 24px) + (20px / 2) = 8px + 10px = 18px to the left.
+            */
+            left: -1.125rem; 
+            top: 0.4rem;   /* Aligns dot vertically with the text */
+            width: 14px;
+            height: 14px;
+            background-color: #8b5cf6; /* violet */
+            border-radius: 50%;
+            border: 3px solid #111827; /* background color, creates a "punched-out" look */
+        }
 
     </style>
 </head>
@@ -120,7 +125,7 @@
                     <p class="font-semibold text-white">Python</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                     <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     <p class="font-semibold text-white">C/C++</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
@@ -160,15 +165,11 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
-<section id="experience" class="relative pl-8 py-12 bg-gray-900 text-white">
-    <!-- Vertical Timeline Line -->
+    <section id="experience" class="relative pl-8 py-12 bg-gray-900 text-white">
     <div class="timeline-line"></div>
 
-    <!-- Experience Heading -->
     <h2 class="text-3xl font-bold mb-10 text-violet-400">Experience</h2>
 
-    <!-- Experience Item 1 -->
     <div class="mb-12 relative">
         <div class="timeline-dot"></div>
         <h3 class="text-xl font-bold">
@@ -180,7 +181,6 @@
         </p>
     </div>
 
-    <!-- Experience Item 2 -->
     <div class="mb-12 relative">
         <div class="timeline-dot"></div>
         <h3 class="text-xl font-bold">
@@ -192,7 +192,6 @@
         </p>
     </div>
 
-    <!-- Experience Item 3 -->
     <div class="mb-12 relative">
         <div class="timeline-dot"></div>
         <h3 class="text-xl font-bold">
