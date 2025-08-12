@@ -1,136 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harshit Gupta | Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- AOS (Animate on Scroll) -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshit Gupta Portfolio</title>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom Styles -->
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
-    body {background:#0d0d0d; color:white; overflow-x:hidden;}
-
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #e6f7ff);
+      color: #333;
+    }
     header {
-      position: fixed; top:0; left:0; width:100%;
-      background: rgba(20,20,20,0.7);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1rem 5%; z-index:1000;
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    header h1 {font-size:1.5rem; font-weight:600; color:#ff4b4b;}
-    nav a {color:white; margin:0 1rem; text-decoration:none; transition:0.3s;}
-    nav a:hover {color:#ff4b4b;}
-
-    section {min-height:100vh; padding:5rem 10%; display:flex; flex-direction:column; justify-content:center;}
-    .hero {text-align:center; position:relative;}
-    .hero h2 {font-size:2.5rem; margin-top:1rem;}
-    .hero p {margin-top:1rem; font-size:1.2rem; color:#ccc;}
-    .btn {display:inline-block; margin-top:2rem; padding:0.8rem 1.5rem; background:#ff4b4b; color:white; border-radius:30px; text-decoration:none; transition:0.3s;}
-    .btn:hover {background:#ff2a2a;}
-
-    .skills, .projects, .contact {text-align:center;}
+    section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: url('assets/photo1.jpg') center/cover no-repeat;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
     .card {
-      background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:15px;
-      margin:1rem; display:inline-block; width:250px; transition:transform 0.3s ease;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover {transform: translateY(-10px) scale(1.05);}
-
-    footer {text-align:center; padding:1rem; background:#111; color:#888;}
-    canvas {position:absolute; top:0; left:0; z-index:-1;}
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <h1>Harshit Gupta</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div id="tsparticles"></div>
-    <h2 data-aos="fade-up">Hi, I'm <span style="color:#ff4b4b;">Harshit Gupta</span></h2>
-    <h3 id="typed-text" style="margin-top:1rem; color:#ff4b4b;"></h3>
-    <p data-aos="fade-up" data-aos-delay="200">Passionate Developer | Tech Enthusiast | Problem Solver</p>
-    <a href="assets/Harshit_Gupta_Resume.pdf" class="btn" data-aos="zoom-in" data-aos-delay="300" target="_blank">Download Resume</a>
+  <section class="hero" data-aos="fade-up">
+    <h2>Welcome to My Portfolio</h2>
   </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2 data-aos="fade-up">Skills</h2>
-    <div>
-      <div class="card" data-aos="flip-left">Python</div>
-      <div class="card" data-aos="flip-left" data-aos-delay="100">C++</div>
-      <div class="card" data-aos="flip-left" data-aos-delay="200">Data Science</div>
+  <section data-aos="fade-right">
+    <div class="card">
+      <h3>About Me</h3>
+      <p>I'm Harshit Gupta, a passionate Computer Science student...</p>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2 data-aos="fade-up">Projects</h2>
-    <div>
-      <div class="card" data-aos="zoom-in">Portfolio Website</div>
-      <div class="card" data-aos="zoom-in" data-aos-delay="100">Data Cleaning Project</div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2 data-aos="fade-up">Contact Me</h2>
-    <form action="https://formspree.io/f/myzpepve" method="POST" data-aos="fade-up" data-aos-delay="100">
-      <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:0.8rem; margin:0.5rem 0; border-radius:5px; border:none;">
-      <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:0.8rem; margin:0.5rem 0; border-radius:5px; border:none;">
-      <textarea name="message" placeholder="Your Message" required style="width:100%; padding:0.8rem; margin:0.5rem 0; border-radius:5px; border:none;"></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Harshit Gupta. All rights reserved.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
   <script>
-    // AOS init
-    AOS.init({duration: 1000, once: true});
-
-    // Typed.js effect
-    new Typed('#typed-text', {
-      strings: ['Web Developer', 'Data Science Enthusiast', 'Problem Solver'],
-      typeSpeed: 50,
-      backSpeed: 25,
-      backDelay: 1500,
-      loop: true
-    });
-
-    // Particles.js effect
-    tsParticles.load("tsparticles", {
-      particles: {
-        number: {value: 60},
-        color: {value: "#ff4b4b"},
-        shape: {type: "circle"},
-        opacity: {value: 0.5},
-        size: {value: 3},
-        move: {enable: true, speed: 2}
-      }
-    });
+    AOS.init();
   </script>
 </body>
 </html>
