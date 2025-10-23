@@ -1,283 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Harshit Gupta, a Data Science Enthusiast specializing in Python, data analysis, and machine learning.">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Harshit Gupta, Data Science Enthusiast" />
     <title>Harshit Gupta | Portfolio</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #111827; /* gray-900 as a base */
-        }
-        .nav-link.active {
-            color: #8b5cf6; /* violet-500 */
-        }
-        /* Glassmorphism Navbar */
-        .glass-nav {
-            background: rgba(17, 24, 39, 0.6); /* gray-900 with opacity */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        /* Base styles for scroll animations */
-        .scroll-animate {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .scroll-animate.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Timeline line: Positioned within the parent section's left padding */
-        .timeline-line {
-            position: absolute;
-            left: 1.5rem; /* 24px: Positioned within the pl-8 (2rem/32px) padding of the container */
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #374151; /* gray-700 */
-        }
-
-        /* Timeline dot: Pulled left from the text content to sit perfectly on the line */
-        .timeline-dot {
-            position: absolute;
-            left: -1.125rem; /* -18px, to center on the line */
-            top: 0.4rem;   /* Aligns dot vertically with the text */
-            width: 14px;
-            height: 14px;
-            background-color: #8b5cf6; /* violet */
-            border-radius: 50%;
-            border: 3px solid #111827; /* background color, creates a "punched-out" look */
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="bg-gray-900 text-gray-300">
+<body class="text-gray-900">
 
-    <nav class="glass-nav px-6 py-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-        <a href="#home" class="text-2xl font-bold text-white">Portfo<span class="text-violet-500">lio.</span></a>
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6">
+        <a href="#home" class="text-2xl font-bold text-gray-900">Portfo<span class="text-violet-500">lio.</span></a>
         <ul id="nav-links" class="hidden md:flex gap-8 font-medium">
-            <li><a href="#home" class="nav-link hover:text-violet-500 transition-colors">Home</a></li>
-            <li><a href="#about" class="nav-link hover:text-violet-500 transition-colors">About</a></li>
-            <li><a href="#skills" class="nav-link hover:text-violet-500 transition-colors">Skills</a></li>
-            <li><a href="#projects" class="nav-link hover:text-violet-500 transition-colors">Projects</a></li>
-            <li><a href="#experience" class="nav-link hover:text-violet-500 transition-colors">Experience</a></li>
-            <li><a href="#contact" class="nav-link hover:text-violet-500 transition-colors">Contact</a></li>
+            <li><a href="#home" class="nav-link hover:text-violet-500">Home</a></li>
+            <li><a href="#about" class="nav-link hover:text-violet-500">About</a></li>
+            <li><a href="#skills" class="nav-link hover:text-violet-500">Skills</a></li>
+            <li><a href="#projects" class="nav-link hover:text-violet-500">Projects</a></li>
+            <li><a href="#experience" class="nav-link hover:text-violet-500">Experience</a></li>
+            <li><a href="#contact" class="nav-link hover:text-violet-500">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="min-h-screen flex items-center justify-center text-center px-6" style="background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);">
-        <div>
-            <h2 class="text-2xl font-light text-gray-400 mb-2 scroll-animate">Hello, my name is</h2>
-            <h1 class="text-6xl md:text-8xl font-bold text-white mb-3 scroll-animate" style="transition-delay: 100ms;">Harshit Gupta</h1>
-            <h3 class="text-3xl md:text-4xl font-light scroll-animate" style="transition-delay: 200ms;">And I'm a <span class="font-semibold text-violet-500" id="typed-text"></span></h3>
-            <div class="mt-8 scroll-animate" style="transition-delay: 300ms;">
-                <a href="assets/Harshit_Gupta_Resume.pdf" download class="bg-violet-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-violet-700 transition-all duration-300 transform hover:scale-105">Download Resume</a>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero-section flex items-center justify-center text-center">
+            <div class="hero-inner scroll-animate" role="region" aria-label="Introduction">
+                <h2 class="subtitle text-2xl font-light text-gray-500">Hello, my name is</h2>
 
-    <section id="about" class="py-24 px-6 bg-gray-900">
-        <div class="max-w-6xl mx-auto scroll-animate">
-            <h2 class="text-4xl font-bold text-center text-white mb-4">About Me</h2>
-            <p class="text-center text-violet-500 mb-16 font-medium">An introduction to who I am</p>
-            <div class="flex flex-col md:flex-row gap-16 items-center">
-                <div class="w-full md:w-1/3 flex justify-center">
-                    <img src="assets/photo1.jpg" alt="Harshit Gupta" class="w-64 h-64 rounded-full shadow-2xl object-cover ring-4 ring-violet-500/50" />
-                </div>
-                <div class="w-full md:w-2/3">
-                    <h3 class="text-3xl font-semibold mb-4 text-white">I explore & uncover stories in data..</h3>
-                    <p class="mb-4 text-lg">As a B.Tech Computer Engineering student, I’m learning, implementing, and analyzing data to turn raw information into meaningful insights.</p>
-                    <p class="text-lg">I first got interested in data while exploring a surfing website. They showed wave patterns, weather, and surf spots so clearly that the data told a compelling story. I realized it was all about how data was organized and presented.</p>
+                <h1 class="hero-title text-6xl md:text-8xl font-bold text-gray-900">
+                    Harshit <span class="hero-last">Gupta</span>
+                </h1>
+
+                <h3 class="lead text-3xl md:text-4xl font-light">
+                    And I'm a <span id="typed-text" class="typed-highlight font-semibold" aria-live="polite"></span>
+                </h3>
+
+                <div class="mt-6">
+                    <a href="assets/Harshit_Gupta_Resume.pdf" download class="resume-btn cta-button-animated bg-violet-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-violet-700">Download Resume</a>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section id="skills" class="py-24 px-6" style="background-color: #111827;">
-        <div class="max-w-6xl mx-auto scroll-animate">
-            <h2 class="text-4xl font-bold text-center text-white mb-4">My Skills</h2>
-            <p class="text-center text-violet-500 mb-16 font-medium">The technologies I work with</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 text-center">
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    <p class="font-semibold text-white">Python</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <p class="font-semibold text-white">C/C++</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
-                    <p class="font-semibold text-white">Git & GitHub</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-9.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-9.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
-                    <p class="font-semibold text-white">Jupyter</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    <p class="font-semibold text-white">VS Code</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <svg class="w-12 h-12 mx-auto mb-3 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.546-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <p class="font-semibold text-white">Problem Solving</p>
-                </div>
-           
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                    <svg class="w-12 h-12 mx-auto mb-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M11 11V3a1 1 0 011-1h4a1 1 0 011 1v8m-7 0a4 4 0 108 0m-8 0a4 4 0 11-8 0m16 0v10a1 1 0 01-1 1H6a1 1 0 01-1-1V11h16z"></path>
-                    </svg>
-                    <p class="font-semibold text-white">Data Analysis (NumPy & Pandas)</p>
-                </div>
+        </section>
 
-                <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
-                  <svg class="w-12 h-12 mx-auto mb-3 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M11 19V6a1 1 0 011-1h9m-9 0L5 19"></path>
-                  </svg>
-                 <p class="font-semibold text-white">Data Visualization (Matplotlib)</p>
+        <section id="about" class="section">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-4 scroll-animate">About Me</h2>
+                <p class="text-center text-violet-500 mb-8 font-medium scroll-animate">An introduction to who I am</p>
+
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="w-full md:w-1/3 flex justify-center scroll-fade-left">
+                        <img src="assets/photo.png" alt="Harshit Gupta" class="w-64 h-64 rounded-full shadow-2xl object-cover ring-4 ring-violet-500/50" />
+                    </div>
+                    <div class="w-full md:w-2/3 scroll-fade-right">
+                        <h3 class="text-3xl font-semibold mb-4 text-gray-900">I turn complex data into clean insights.</h3>
+                        <p class="mb-4 text-lg">As a Computer Engineering student with a passion for data science, I enjoy dissecting large datasets, identifying patterns, and building models that solve real problems.</p>
+                        <p class="text-lg">I have a foundation in Python, machine learning, and analytical problem-solving, focused on turning data into actionable results.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="py-24 px-6 bg-gray-900">
-      <div class="max-w-6xl mx-auto scroll-animate">
-    <h2 class="text-4xl font-bold text-center text-white mb-4">My Projects</h2>
-    <p class="text-center text-violet-500 mb-16 font-medium">A selection of my work</p>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Project 1 -->
-      <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-        <img src="assets/data_photo.jpg" alt="Data Science Project Thumbnail" class="w-full h-48 object-cover" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-white">Data Science Repository</h3>
-          <p class="text-sm text-gray-400 mt-2 mb-4">A collection of notebooks exploring Python, Pandas, NumPy, and various ML concepts.</p>
-          <a href="https://github.com/Harshit-80989/Data_Science" target="_blank" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors">View on GitHub →</a>
-        </div>
-      </div>
+        <section id="skills" class="section">
+            <div class="max-w-6xl mx-auto scroll-animate">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">My Skills</h2>
+                <p class="text-center text-violet-500 mb-8 font-medium">The technologies I work with</p>
 
-      <!-- Project 2 -->
-      <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-        <img src="assets/nlp_photo.jpg" alt="NLP Console App Thumbnail" class="w-full h-48 object-cover" />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-white">NLP Console App</h3>
-          <p class="text-sm text-gray-400 mt-2 mb-4">A console-based app that demonstrates core Natural Language Processing concepts with Python.</p>
-          <a href="https://github.com/Harshit-80989/nlp-console-app" target="_blank" class="font-semibold text-violet-400 hover:text-violet-300 transition-colors">View on GitHub →</a>
-        </div>
-      </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-center">
+                    <!-- Python -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>Python</title>
+                            <path fill="#306998" d="M63.5 0c-5.7 0-10.3 4.6-10.3 10.3v10.3H36.1C20.9 20.6 13 34.1 13 50.5v14.6c0 16.6 7.9 29.8 23.1 29.8h6.1v6.1c0 5.7 4.6 10.3 10.3 10.3h21.7c15.2 0 23.1-12.9 23.1-29.3V64.9c0-16.6-7.9-30.1-23.1-30.1H80V10.3C80 4.6 75.4 0 69.7 0H63.5z"/>
+                            <path fill="#FFD43B" d="M64.5 128c5.7 0 10.3-4.6 10.3-10.3v-10.3h17.1c15.2 0 23.1-13.5 23.1-29.9V63.0c0-16.6-7.9-29.8-23.1-29.8h-6.1v-6.1c0-5.7-4.6-10.3-10.3-10.3H64.5c-15.2 0-23.1 12.9-23.1 29.3v14.6c0 16.6 7.9 30.1 23.1 30.1h6.1v22.1c0 5.7 4.6 10.3 10.3 10.3z"/>
+                        </svg>
+                        <p class="font-semibold text-white">Python</p>
+                    </div>
 
-    </div>
-  </div>
-</section>
+                    <!-- C / C++ -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2 text-violet-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>C / C++</title>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 9l-4 3 4 3M16 9l4 3-4 3M12 3v18" />
+                        </svg>
+                        <p class="font-semibold text-white">C / C++</p>
+                    </div>
 
+                    <!-- Git & GitHub -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="#F05032" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>Git</title>
+                            <path d="M16.5 3.5L20.5 7.5" />
+                            <circle cx="7.5" cy="16.5" r="2.5" fill="#F05032" stroke="none" />
+                            <circle cx="7.5" cy="7.5" r="2.5" fill="#F05032" stroke="none" />
+                            <circle cx="16.5" cy="12" r="2.5" fill="#F05032" stroke="none" />
+                            <path d="M9.5 8.5L14 11" stroke="#fff" stroke-width=".8"/>
+                            <path d="M14 13v-2" stroke="#fff" stroke-width=".8"/>
+                        </svg>
+                        <p class="font-semibold text-white">Git & GitHub</p>
+                    </div>
 
-    <section id="experience" class="py-24 px-6 bg-gray-900">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold text-center text-white mb-16">Experience</h2>
+                    <!-- Jupyter -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>Jupyter</title>
+                            <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3.5a6.5 6.5 0 01.5 13c-3.5 0-6.5-2.8-6.5-6.5S9 5.5 12 5.5z" fill="#F37626"/>
+                            <circle cx="16.5" cy="8.5" r="1.5" fill="#000"/>
+                        </svg>
+                        <p class="font-semibold text-white">Jupyter</p>
+                    </div>
 
-            <div class="relative">
-                <div class="timeline-line"></div>
+                    <!-- VS Code -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>VS Code</title>
+                            <path d="M2 7v10l7-5-7-5z" fill="#007ACC"/>
+                            <path d="M9 7l13-5v20L9 17V7z" fill="#001F3F" opacity="0.9"/>
+                        </svg>
+                        <p class="font-semibold text-white">VS Code</p>
+                    </div>
 
-                <div class="mb-12 relative pl-12">
-                    <div class="timeline-dot"></div>
-                    <h3 class="text-xl font-bold text-white">
-                        Campus Ambassador at <span class="text-violet-400">Techniche, IIT Guwahati</span>
-                    </h3>
-                    <p class="text-sm text-gray-400 mb-2">May 2025 – Aug,2025</p>
-                    <p class="text-gray-300">
-                        Coordinated events and represented the brand, enhancing communication and leadership skills.
-                    </p>
+                    <!-- Problem Solving -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>Problem Solving</title>
+                            <path d="M12 2a6 6 0 00-6 6c0 3.5 3 4.5 3 7h6c0-2.5 3-3.5 3-7a6 6 0 00-6-6z" />
+                            <path d="M12 18v2" />
+                        </svg>
+                        <p class="font-semibold text-white">Problem Solving</p>
+                    </div>
+
+                    <!-- Data Analysis (NumPy & Pandas) -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>Data Analysis</title>
+                            <rect x="3" y="10" width="3.5" height="9" rx="0.6" fill="#60A5FA"/>
+                            <rect x="8.25" y="6" width="3.5" height="13" rx="0.6" fill="#3B82F6"/>
+                            <rect x="13.5" y="3" width="3.5" height="16" rx="0.6" fill="#1D4ED8"/>
+                            <rect x="18.75" y="13" width="1.5" height="6" rx="0.4" fill="#93C5FD"/>
+                        </svg>
+                        <p class="font-semibold text-white">Data Analysis (NumPy & Pandas)</p>
+                    </div>
+
+                    <!-- Data Visualization (Matplotlib) -->
+                    <div class="card-hover-effect bg-gray-800 p-4 rounded-lg shadow-lg">
+                        <svg class="w-12 h-12 mx-auto mb-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+                            <title>Data Visualization</title>
+                            <path d="M3 17h2v4H3zM7 11h2v10H7zM11 5h2v16h-2zM15 8h2v13h-2zM19 2h2v19h-2z" fill="#34D399"/>
+                        </svg>
+                        <p class="font-semibold text-white">Data Visualization (Matplotlib)</p>
+                    </div>
                 </div>
-
-                
             </div>
-        </div>
-    </section>
+        </section>
 
 
+        <section id="projects" class="section">
+            <div class="max-w-6xl mx-auto scroll-animate">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">My Projects</h2>
+                <p class="text-center text-violet-500 mb-8 font-medium">A selection of my work</p>
 
-    <section id="contact" class="py-24 px-6 bg-gray-900">
-        <div class="max-w-xl mx-auto text-center scroll-animate">
-            <h2 class="text-4xl font-bold text-white mb-4">Get In Touch</h2>
-            <p class="text-center text-violet-500 mb-8">Have a question or want to work together?</p>
-            <form class="space-y-4" action="https://formspree.io/f/myzpepve" method="POST">
-                <input type="text" name="name" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:outline-none" required />
-                <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:outline-none" required />
-                <textarea name="message" placeholder="Your Message..." rows="5" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-violet-500 focus:outline-none" required></textarea>
-                <button type="submit" class="w-full bg-violet-600 text-white font-bold py-3 rounded-lg shadow-md hover:bg-violet-700 transition-colors duration-300 transform hover:scale-105">Send Message</button>
-            </form>
-        </div>
-    </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card-hover-effect bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/data_photo.jpg" alt="Data Science Project" class="w-full h-48 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-white">Data Science Repository</h3>
+                            <p class="text-sm text-gray-400 mt-2 mb-3">Notebooks exploring Python, Pandas, NumPy, and ML concepts.</p>
+                            <a href="https://github.com/Harshit-80989/Data_Science" target="_blank" class="font-semibold text-violet-400">View on GitHub →</a>
+                        </div>
+                    </div>
 
-    <footer class="bg-black text-center py-6">
-        <p class="text-gray-400">© 2025 Harshit Gupta. All rights reserved.</p>
-        <div class="mt-4">
-            <a href="https://www.linkedin.com/in/harshit-gupta-b9553335a/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-violet-400 mx-3 transition-colors">LinkedIn</a>
-            <span class="text-gray-600">|</span>
-            <a href="https://github.com/Harshit-80989" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-violet-400 mx-3 transition-colors">GitHub</a>
+                    <div class="card-hover-effect bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/nlp_photo.jpg" alt="NLP Project" class="w-full h-48 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-white">NLP Console App</h3>
+                            <p class="text-sm text-gray-400 mt-2 mb-3">Console-based NLP demos in Python.</p>
+                            <a href="https://github.com/Harshit-80989/nlp-console-app" target="_blank" class="font-semibold text-violet-400">View on GitHub →</a>
+                        </div>
+                    </div>
+
+                    <div class="card-hover-effect bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                        <img src="assets/image.png" alt="AI Project" class="w-full h-48 object-cover" />
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold text-white">AI-Powered Legal Analyzer</h3>
+                            <p class="text-sm text-gray-400 mt-2 mb-3">NLP app for legal document summarization (Streamlit).</p>
+                            <a href="https://github.com/Harshit-80989/legal-ease-ai" target="_blank" class="font-semibold text-violet-400">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="max-w-3xl mx-auto scroll-animate">
+                <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">Experience</h2>
+                <div class="relative">
+                    <div class="timeline-line"></div>
+                    <div class="mb-8 relative pl-8">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-bold text-gray-900">Campus Ambassador at <span class="text-violet-400">Techniche, IIT Guwahati</span></h3>
+                        <p class="text-sm text-gray-500 mb-2">May 2025 – Aug 2025</p>
+                        <p class="text-gray-700">Coordinated events and represented the brand, improving communication and leadership skills.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="max-w-xl mx-auto text-center scroll-animate">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-violet-500 mb-6">Have a question or want to work together?</p>
+                <form action="https://formspree.io/f/myzpepve" method="POST" class="space-y-4">
+                    <input name="name" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500" required>
+                    <input type="email" name="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500" required>
+                    <textarea name="message" placeholder="Your Message..." rows="5" class="w-full px-4 py-3 bg-gray-100 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-500" required></textarea>
+                    <button type="submit" class="w-full cta-button-animated bg-violet-600 text-white font-bold py-3 rounded-lg shadow-md hover:bg-violet-700">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white text-center">
+        <p class="text-gray-600 py-4">© 2025 Harshit Gupta. All rights reserved.</p>
+        <div class="mb-4">
+            <a href="https://www.linkedin.com/in/harshit-gupta-b9553335a/" target="_blank" rel="noopener" class="text-gray-700 hover:text-violet-400 mx-3">LinkedIn</a>
+            <a href="https://github.com/Harshit-80989" target="_blank" rel="noopener" class="text-gray-700 hover:text-violet-400 mx-3">GitHub</a>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- 1. Typing Effect ---
             if (document.getElementById('typed-text')) {
                 new Typed('#typed-text', {
                     strings: ['Data Science Enthusiast', 'Python Developer', 'Problem Solver'],
                     typeSpeed: 50,
                     backSpeed: 30,
                     loop: true,
-                    backDelay: 2000,
+                    backDelay: 1800
                 });
             }
 
-            // --- 2. Scroll Animations ---
-            const animatedElements = document.querySelectorAll('.scroll-animate');
+            const animated = document.querySelectorAll('.scroll-animate, .scroll-fade-left, .scroll-fade-right');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
                 });
-            }, { threshold: 0.1 });
-            animatedElements.forEach(el => observer.observe(el));
+            }, { threshold: 0.12 });
+            animated.forEach(el => observer.observe(el));
 
-            // --- 3. Active Nav Link Highlighting ---
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.nav-link');
             const navObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const targetId = entry.target.id;
-                        navLinks.forEach(link => {
-                            link.classList.toggle('active', link.getAttribute('href') === `#${targetId}`);
-                        });
+                        const id = entry.target.id;
+                        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
                     }
                 });
-            }, { rootMargin: '-30% 0px -70% 0px' });
-            sections.forEach(section => navObserver.observe(section));
+            }, { rootMargin: '-30% 0px -60% 0px' });
+            sections.forEach(s => navObserver.observe(s));
         });
     </script>
 
