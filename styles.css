@@ -114,7 +114,7 @@ body {
     #typed-text::after { animation: none !important; }
 }
 
-/* Global spacing reduction */
+/* Global spacing */
 .section { padding: 3rem 1.25rem; }
 footer { padding: 0.75rem 0; }
 
@@ -123,4 +123,64 @@ footer { padding: 0.75rem 0; }
     .hero-title { font-size: 3rem; animation: none; }
     .hero-inner { padding: 1rem; }
     .grid { gap: 0.6rem; }
+}
+
+/* Contact - centered highlighted send + social pills */
+.send-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg,#7c3aed,#06b6d4);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 12px 30px rgba(99,102,241,0.18);
+    transition: transform .16s ease, box-shadow .16s ease;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.send-btn:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(99,102,241,0.22); }
+
+/* Centered social pills in contact */
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+    
+}
+.social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 26px rgba(17,24,39,0.08);
+    transition: transform .14s ease, box-shadow .14s ease;
+    font-size: 15px;
+}
+.social-pill svg { flex-shrink: 0; width:18px; height:18px; }
+
+/* brand colors for pills */
+.social-pill.linkedin { background: linear-gradient(90deg,#0A66C2,#175C9C); }
+.social-pill.email    { background: linear-gradient(90deg,#EA4335,#C33A2C); }
+.social-pill.github   { background: linear-gradient(90deg,#111827,#374151); }
+
+.social-pill:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(17,24,39,0.14); }
+
+/* Make sure social-bar (if present) doesn't conflict visually: hide on desktop if needed */
+.social-bar { display: none; }
+
+/* On small screens keep pills compact */
+@media (max-width: 640px) {
+    .send-btn { width: 100%; justify-content: center; padding: 12px; }
+    .contact-socials { gap: 8px; }
+    .social-pill { padding: 8px 10px; font-size: 13px; border-radius: 12px; }
 }
